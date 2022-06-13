@@ -14,43 +14,43 @@ def x_plus():
     # to increase X dimm in 0.01mm
     a = float(x.get())
     a += 0.01
-    x.set(str(round(a, 2)))
+    x.set(round(a, 2))
 
 def x_minus():
     # to decrease X dimm in 0.01mm
     a = float(x.get())
     a -= 0.01
-    x.set(str(round(a, 2)))
+    x.set(round(a, 2))
 
 def y_plus():
     # to increase Y dimm in 0.01mm
     a = float(y.get())
     a += 0.01
-    y.set(str(round(a, 2)))
+    y.set(round(a, 2))
 
 def y_minus():
     # to decrease Y dimm in 0.01mm
     a = float(y.get())
     a -= 0.01
-    y.set(str(round(a, 2)))
+    y.set(round(a, 2))
 
 def z_plus():
     # to increase Z dimm in 0.01mm
     a = float(z.get())
     a += 0.01
-    z.set(str(round(a, 2)))
+    z.set(round(a, 2))
 
 def z_minus():
     # to decrease Z dimm in 0.01mm
     a = float(z.get())
     a -= 0.01
-    z.set(str(round(a, 2)))
+    z.set(round(a, 2))
 
 def convert():
     '''
     converts dimms from one coordinate system to other
     '''
-    # get values from input string variables
+    # get values from input variables
     a = float(x.get())
     b = float(y.get())
     c = float(z.get())
@@ -65,17 +65,17 @@ def convert():
         Y = 0.707*c +0.707*b
         Z = -1*a
 
-    # set result values into string variables
-    x_res.set(str(round(X, 3))) 
-    y_res.set(str(round(Y, 3)))
-    z_res.set(str(round(Z, 3)))
+    # set result values into variables
+    x_res.set(round(X, 3)) 
+    y_res.set(round(Y, 3))
+    z_res.set(round(Z, 3))
 
 
 def nulling():
     # sets input variables to zero
-    x.set('0.0')
-    y.set('0.0')
-    z.set('0.0')
+    x.set(0.0)
+    y.set(0.0)
+    z.set(0.0)
 
 
 # main container 
@@ -91,18 +91,18 @@ style.configure('RES.TLabel', background='white', font=('bold'))
 csys = tkinter.StringVar() # radiobutton variable, choosen operation
 csys.set('op10') # set initial value
 
-x = tkinter.StringVar() # x axis input variable as string
-x.set('0.0') # initial value set to 0
-y = tkinter.StringVar() # y axis input variable as string
-y.set('0.0')
-z = tkinter.StringVar() # z axis input variable as string
-z.set('0.0')
-x_res = tkinter.StringVar() # output x axis variable
-x_res.set('0.0')
-y_res = tkinter.StringVar() # output y axis variable
-y_res.set('0.0')
-z_res = tkinter.StringVar() # output z axis variable
-z_res.set('0.0')
+x = tkinter.DoubleVar() # x axis input variable
+x.set(0.0) # initial value set to 0
+y = tkinter.DoubleVar() # y axis input variable
+y.set(0.0)
+z = tkinter.DoubleVar() # z axis input variable
+z.set(0.0)
+x_res = tkinter.DoubleVar() # output x axis variable
+x_res.set(0.0)
+y_res = tkinter.DoubleVar() # output y axis variable
+y_res.set(0.0)
+z_res = tkinter.DoubleVar() # output z axis variable
+z_res.set(0.0)
 
 # widget definitions
 
